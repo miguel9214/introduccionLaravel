@@ -14,7 +14,7 @@ Route::Put Actualizar
 Route::get('/', function () {
     return view('home');
     // return view('welcome');
-});
+})->name('home');
 
 Route::get('blog', function () {
     $posts =[
@@ -23,11 +23,11 @@ Route::get('blog', function () {
     ];
 
     return view('blog', ['posts' => $posts]);
-});
+})->name('blog');
 
 
 
 Route::get('blog/{slug}', function ($slug) {
     $post = $slug;
     return view('post',['post'=>$post]);
-});
+})->name('post');
