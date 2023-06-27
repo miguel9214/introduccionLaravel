@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -11,23 +11,13 @@ Route::Delete Eliminar
 Route::Put Actualizar
 */
 
-Route::get('/', function () {
-    return view('home');
-    // return view('welcome');
-})->name('home');
+Route::controller(PageController::class)->group(function(){
 
-Route::get('blog', function () {
-    $posts =[
-        ['id'=>1,'title'=>'PHP','slug'=>'php'],
-        ['id'=>2,'title'=>'Laravel','slug'=>'laravel']
-    ];
+    Route::get('/', 'home')->name('home');
+    
+    Route::get('blog','blog')->name('blog');
+    
+    Route::get('blog/{slug}', 'post')->name('post');
+    
+});
 
-    return view('blog', ['posts' => $posts]);
-})->name('blog');
-
-
-
-Route::get('blog/{slug}', function ($slug) {
-    $post = $slug;
-    return view('post',['post'=>$post]);
-})->name('post');
