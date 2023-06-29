@@ -64,3 +64,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Mis notas
+1) el trabajo comienzae en las rutas
+2) Luego creo el controlador
+Cada metodo es la respuesta a una ruta
+3) los modelos reprsentan las tablas en la base de datos
+4) En la carpeta views estan las vistas que del proyecto.
