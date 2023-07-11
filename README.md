@@ -124,3 +124,16 @@ Nos ayuda a trabajar con los datos como si fueran objetos de php.
 Clase 11
 Creacion de relaciones.
 
+Clase 13
+Para instalar un componente plantilla de administracion e inicio de sesion instalamos lo siguiente
+
+Antes debemos guardar las rutas que hayamos creado
+en web.app
+
+composer require laravel/breeze
+php artisan brezee:install --dev
+
+Luego de eso modificamos las plantilla que hayamos creado agregando los enlaces para las vistas creadas
+Si despues de eso no tiene los estilos bien debemos reintalar node con npm install
+
+Clase 14
