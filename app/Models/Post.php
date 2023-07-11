@@ -12,6 +12,7 @@ class Post extends Model
     // Creacion de relacion de manera directa
     
     public function user(){
+        //Una publicacion pertenece a un usuario.
         return $this->belongsTo(User::class);
     }
 }
