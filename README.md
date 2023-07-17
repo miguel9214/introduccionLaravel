@@ -97,7 +97,7 @@ La configuracion de las rutas se hacen en el archivo web.php
 
 clase 8
 Creacion de migrations comando
-php artisan make:migration create_NOMBRE_DE_LA_MIGRACION_table
+php artisan make:migration create_'NOMBRE_DE_LA_TABLA'_table
 
 Actuaslizar campos de la tabla creada
 php artisan migrate
@@ -136,4 +136,31 @@ php artisan brezee:install --dev
 Luego de eso modificamos las plantilla que hayamos creado agregando los enlaces para las vistas creadas
 Si despues de eso no tiene los estilos bien debemos reintalar node con npm install
 
-Clase 14
+Clase 15
+Creacion de index
+Se crea la ruta y luego la vista
+     <table class="mb-4">
+                        @foreach ($posts as $post)
+                            <tr class="boder-b boder-gray-200 text-sm">
+                                <td class="px-6 py-4" >{{$post->title}}</td>
+                                <td class="px-6 py-4" ><a href="" class="text-indigo-600">Editar</a></td>
+                                <td class="px-6 py-4" >Eliminar</td>
+                            </tr>
+                        @endforeach
+                    </table>
+    {{$posts->links()}}
+
+Vista de tabla y paginacion de la misma
+
+Clase 17
+
+Debemos crear el metodo para eliminar el cual se llama destroy el cual es la ruta esto lo define laravel
+La funcion debe tener el modelo y un parametro cual deseamos eliminar
+
+Creacion del formulario
+<form action="{{route('posts.destroy',$post)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Eliminar" class="bg-red-800 text-white rounded px-4 py-2"  onclick="return confirm('Desea Elimminar?')">
+</form>
+
