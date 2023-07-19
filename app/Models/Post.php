@@ -15,4 +15,12 @@ class Post extends Model
         //Una publicacion pertenece a un usuario.
         return $this->belongsTo(User::class);
     }
+
+    //Permiso para poder enviar mas de un datos
+
+    protected $fillable = [
+        'title',
+        'slug',
+        'body',
+    ];
 }
